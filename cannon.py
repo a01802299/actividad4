@@ -8,11 +8,12 @@ targets = []
 
 def tap(x, y):
     "Respond to screen tap."
-    if not inside(ball):
-        ball.x = -199
-        ball.y = -199
-        speed.x = (x + 200) / 10
-        speed.y = (y + 200) / 10
+    "if not inside(ball):"
+        
+    ball.x = -199
+    ball.y = -199
+    speed.x = (x + 200) / 10
+    speed.y = (y + 200) / 10
 
 def inside(xy):
     "Return True if xy within screen."
@@ -41,6 +42,9 @@ def move():
 
     for target in targets:
         target.x -=  1
+        if not inside(target):
+            target.x = 200
+            target.y = randrange(-150, 150)
 
     if inside(ball):
         speed.y -= 0.35
@@ -52,12 +56,18 @@ def move():
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
+        else:
+            target.x = 200
+            target.y = randrange(-150, 150)
+            pass
+
+    if not inside(ball):
+        ball.x = -199
+        ball.y = -199
+        speed.x = 0
+        speed.y = 0
 
     draw()
-
-    for target in targets:
-        if not inside(target):
-            return
 
     ontimer(move, 35)
 
