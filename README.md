@@ -1,1 +1,1 @@
-# Original de Snake.py
+# Original de Cannon.py
