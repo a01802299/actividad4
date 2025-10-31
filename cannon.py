@@ -1,11 +1,18 @@
+# Descripcion: 
+# Autores: Armando Vasquez Ambrocio | A01669283
+#          Diana Karen Barrales Victorio | A018022299
+# Fecha de modificacion: 30/10/25
+
 from random import randrange
 from turtle import *
 from freegames import vector
 
+# Estado inicial
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
 
+# Responde ante los clicls en pantalla y define la velocidad en los ejes X y Y
 def tap(x, y):
     "Respond to screen tap."
     "if not inside(ball):"
@@ -15,10 +22,12 @@ def tap(x, y):
     speed.x = (x + 200) / 10
     speed.y = (y + 200) / 10
 
+# Verifica si un punto esta dentro de la ventana visible. Regresa true si esta dentro de la pantalla.
 def inside(xy):
     "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
+# Limpia y dibuja los blancos y la bala
 def draw():
     "Draw ball and targets."
     clear()
@@ -33,6 +42,7 @@ def draw():
 
     update()
 
+# Define el movimiento de la bala y de los objetivos
 def move():
     "Move ball and targets."
     if randrange(40) == 0:
@@ -71,6 +81,7 @@ def move():
 
     ontimer(move, 35)
 
+#Configuracion de la ventana
 setup(420, 420, 370, 0)
 hideturtle()
 up()
