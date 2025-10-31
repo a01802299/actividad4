@@ -1,3 +1,4 @@
+# Este repositorio contiene las modificaciones realizadas al juego del Tiro Parabólico.
 # Modificaciones de Cannon.py
 - Para iniciar con esta actividad, se cambió la velociad en el funcionamiento de los proyectiles y de los balones en las funciones definidas y en ontimer.
 - Luego se realizó una correción en el readme.
